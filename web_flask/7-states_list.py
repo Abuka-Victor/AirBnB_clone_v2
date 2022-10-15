@@ -15,7 +15,7 @@ def state_list():
     list_of_states = []
     for key, value in list_of_states_objects.items():
         list_of_states.extend([value.id, value.name])
-    return render_template('7-states_list.html', states=list_of_states)
+    return render_template('7-states_list.html', states=list_of_states_objects)
 
 
 if __name__ == "__main__":
