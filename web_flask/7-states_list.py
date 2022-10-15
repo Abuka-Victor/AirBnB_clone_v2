@@ -18,5 +18,10 @@ def state_list():
     return render_template('7-states_list.html', states=list_of_states)
 
 
+@app.teardown_appcontext
+def handle_close(exception):
+    storage.close()
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
