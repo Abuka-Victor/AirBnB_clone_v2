@@ -45,7 +45,7 @@ def display_num(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def display_temp(n):
     """ Return a template """
-    return render_template("templates/5-number.html", number=n)
+    return render_template("5-number.html", number=n)
 
 
 if __name__ == "__main__":
