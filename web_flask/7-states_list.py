@@ -11,6 +11,7 @@ app = Flask(__name__)
 
 @app.route('/states_list', strict_slashes=False)
 def state_list():
+    """ A function to get all the states in the db"""
     list_of_states_objects = storage.all(State)
     list_of_states = []
     for key, value in list_of_states_objects.items():
@@ -20,6 +21,7 @@ def state_list():
 
 @app.teardown_appcontext
 def handle_close(exception):
+    """ To remove current sqlalchemy session """
     storage.close()
 
 
